@@ -1,15 +1,9 @@
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Введите сумму на балансе: ");
-        int balance = sc.nextInt();
-
-        System.out.print("Введите суму, вносимую на баланс: ");
-        int sum = sc.nextInt();
+        int balance = 100;
+        int sum = 2000;
 
         // минимальная сумма пополнения, более которой начисляются бонусы
         final int minSumBonus = 1000;
@@ -19,9 +13,10 @@ public class Main {
         // изначально количество бонусов равно 0
         int bonus = 0;
         // но если сумма пополнения составила более чем 1000 рублей,
-        if (sum > minSumBonus)
+        if (sum > minSumBonus) {
             // то вычисляем количество бонусов с использованием целочисленного деления
             bonus = sum / countRubBonus;
+        }
 
         // вычисляем итоговый счёт
         int total = balance + sum + bonus;
